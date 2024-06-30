@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>老闆專屬區域</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- 自定義CSS -->
+    <style>
+        body {
+            background: url('https://www.example.com/executive-office-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            text-align: center;
+        }
+        h2 {
+            color: #343a40;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        .btn-custom {
+            background-color: #6c757d;
+            border: none;
+            border-radius: 30px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0.5rem;
+        }
+        .btn-custom:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>老闆專屬區域</h2>
+    <hr>
+    <p>這是專為老闆設計的區域，包含了重要的管理功能。</p>
+    <hr>
+    <div>
+        <a th:href="@{/employees/showAdmin}" class="btn btn-custom">返回首頁</a>
+        <a href="#" class="btn btn-custom">查看報表</a>
+        <a href="#" class="btn btn-custom">管理員工</a>
+        <a href="#" class="btn btn-custom">設置目標</a>
+    </div>
+</div>
+
+<!-- 引入Bootstrap的JavaScript（可選） -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz6Woob+a6zZ7R2ga6sv2h9QIV3zzP7Zy1cEM7t88qBi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IQsoLXlNHjU6fzomR5R6dGVLDG1n4o2eZ4e9cP0GzGmqh6UwJDRmC/7lCpSyQOIz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Small Business - Start Bootstrap Template</title>
+    <!-- 網站圖示-->
+    <link rel="icon" type="image/x-icon" href="../../static/assets/favicon.ico" />
+    <!-- 核心主題CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#!">
+            <img src="/assets/icon.webp" alt="智慧科技" style="height: 30px; margin-right: 3px;">
+            智慧科技
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="showAdmin">首頁</a></li>
+                <li class="nav-item"><a class="nav-link" href="showAdmin">還沒想到</a></li>
+                <li class="nav-item"><a class="nav-link" href="list">內部系統</a></li>
+
+                <li class="nav-item">
+                    <form class="nav-link" action="#" th:action="@{/logout}" method="POST">
+                        <input type="submit" class="logout-button" value="登出">
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="/assets/3.jpg" alt="Company Office" /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">公司信念</h1>
+            <p>我們堅信，科技應該服務於人類進步與幸福。我們致力於創新，不斷挑戰技術邊界，以卓越的產品和服務改善人們的生活。我們追求可持續發展，重視環境保護，並積極參與社會公益，為創造更美好的未來而努力。</p>
+            <a class="btn btn-primary" href="#!">立即行動！</a>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body">
+            <p class="text-white m-0">「創新科技，智造未來；引領潮流，改變世界。」</p>
+        </div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="/assets/1.webp" alt="Business Work" />
+                <div class="card-body">
+                    <h2 class="card-title">未來目標</h2>
+                    <p class="card-text">我們致力於成為全球領先的科技創新企業，通過不斷推動技術邊界，創造無與倫比的用戶體驗和商業價值。我們相信，通過堅持這些目標，我們將在未來的科技浪潮中脫穎而出，引領行業發展，為社會創造更大的價值。</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">更多..</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="/assets/ESG.avif" alt="Team Meeting" />
+                <div class="card-body">
+                    <h2 class="card-title">ESG永續發展</h2>
+                    <p class="card-text">透過ESG基本意涵、指標與推動步驟等成功案例分享，本文期望幫助企業認知 ESG 的重要性，並找到落實 ESG 的方法，現在就開始加入ESG的行列，為企業永續與地球永續共盡一份心力！</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">更多..</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="/assets/ESG2.webp" alt="Office Workspace" />
+                <div class="card-body">
+                    <h2 class="card-title">社會責任</h2>
+                    <p class="card-text">我們致力於科技創新，推動社會進步，保護環境，並促進社會公平與教育發展。我們相信科技應造福全人類，並積極參與社區建設和公益活動，履行企業社會責任。</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">更多..</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="../../static/js/scripts.js"></script>
+</body>
+</html>

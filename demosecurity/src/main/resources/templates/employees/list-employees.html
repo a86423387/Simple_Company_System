@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+	<title>員工名錄</title>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h3>員工名錄</h3>
+	<hr>
+
+	<!-- Add a button -->
+	<a th:href="@{/employees/showFormForAdd}"
+		class="btn btn-primary btn-sm mb-3">
+		新增員工
+	</a>
+
+	<!-- @{/employees/save}解析URL,${employee}物件表單字段綁定,*{firstName}表單物件 @>$>*-->
+
+	<table class="table table-bordered table-striped">
+		<thead class="table-dark">
+			<tr>
+				<th>名字</th>
+				<th>姓</th>
+				<th>電子郵件</th>
+				<th>作用</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempEmployee : ${employees}">
+			
+				<td th:text="${tempEmployee.firstName}" />	
+				<td th:text="${tempEmployee.lastName}" />	
+				<td th:text="${tempEmployee.email}" />
+
+				<td>
+					<div class="row">
+
+						<div class="col-small">
+							<!-- Add "update" button/link -->
+							<form action="#" th:action="@{/employees/showFormForUpdate}" method="POST">
+											<!-- type="hidden"：設置這個輸入框為隱藏類型 -->
+								<!-- th:value="${tempEmployee.id}"：Thymeleaf標記，設置隱藏欄位的值為tempEmployee.id。
+								這意味著每次遍歷時，這個欄位將包含當前員工的ID -->
+								<input type="hidden" name="employeeId" th:value="${tempEmployee.id}" />
+								<button type="submit" class="btn btn-info btn-sm me-1" style="float:left;">Update</button>
+
+							</form>
+
+							<!-- Add "delete" button/link -->
+							<form action="#" th:action="@{/employees/delete}" method="POST">
+
+								<input type="hidden" name="employeeId" th:value="${tempEmployee.id}" />
+								<button type="submit" class="btn btn-danger btn-sm"
+										onclick="if (!(confirm('您確定要刪除該員工嗎？'))) return false">
+									Delete
+								</button>
+
+							</form>
+						</div>
+
+					</div>
+				</td>
+
+			</tr>
+		</tbody>		
+	</table>
+
+	<a th:href="@{/employees/showAdmin}"
+	   class="btn btn-secondary btn-sm">返回首頁
+	</a>
+		<br><br>
+	<form class="nav-link" action="#" th:action="@{/systems}" method="GET">
+		<input type="submit" class="btn btn-secondary btn-sm" value="高階管理層">
+	</form>
+
+	
+</div>
+	
+</body>
+</html>
+
+
+

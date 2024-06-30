@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>自定義登錄頁面</title>
+    <!-- 引入Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .login-form {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .failed {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-form">
+    <h3 class="text-center">我的自定義登錄頁面</h3>
+
+    <form action="#" th:action="@{/authenticateTheUser}" method="POST">
+        <!-- 檢查登入錯誤-->
+        <div th:if="${param.error}">
+            <i class="failed">不好意思！您輸入的使用者名/密碼無效</i>
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">User name:</label>
+            <input type="text" id="username" name="username" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" />
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<!-- 引入Bootstrap的JavaScript（可選） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
