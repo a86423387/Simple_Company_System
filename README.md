@@ -5,6 +5,12 @@
 2. CRUD 員工人數
 3. 各種不同的權限介面
 
+## 測試帳號密碼
+username: john
+username: mary
+username: susan
+password: 0000
+
 ## 項目截圖
 
 ### 主頁
