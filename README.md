@@ -6,9 +6,9 @@
 3. 各種不同的權限介面
 
 ## 測試帳號密碼
-username: john
-username: mary
-username: susan
+username: john<br>
+username: mary<br>
+username: susan<br>
 password: 0000
 
 ## 項目截圖
